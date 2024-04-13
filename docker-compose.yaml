@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  gitlab-ce-12-2-4:
+    image: 'gitlab/gitlab-ce:12.2.4-ce.0'
+    restart: always
+    container_name: gitlab-ce-12-2-4
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://example.com'
+        nginx['listen_port'] = 80
+        nginx['listen_https'] = false
+    volumes:
+      - ./config:/etc/gitlab
+      - ./logs:/var/log/gitlab
+      - ./data:/var/opt/gitlab
