@@ -35,7 +35,7 @@ cat <<EOF>> docker-compose.yaml
 version: '3.7'
 services:
   gitlab-ce-12-2-4:
-    image: 'gitlab/gitlab-ce:12.2.4-ce.0'
+    image: 'gitlab/gitlab-ce:12.2.4'
     restart: always
     container_name: gitlab-ce-12-2-4
     environment:
